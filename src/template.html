@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разновидности III склонения</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a84ff'/%3E%3Cstop offset='1' stop-color='%23bf5af2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EIII%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f5f5f7;
+  --bg-elev: #ffffff;
+  --glass: rgba(255,255,255,.72);
+  --text: #1d1d1f;
+  --text-2: #6e6e73;
+  --text-3: #86868b;
+  --line: rgba(0,0,0,.08);
+  --fill: rgba(118,118,128,.12);
+  --fill-2: rgba(118,118,128,.08);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 28px rgba(0,0,0,.06);
+  --shadow-lg: 0 2px 6px rgba(0,0,0,.04), 0 24px 60px rgba(0,0,0,.10);
+  --accent: #0071e3;
+  --vowel: #0a84ff;  --vowel-2: #64d2ff;
+  --mixA: #bf5af2;   --mixA-2: #ff6fd8;
+  --mixB: #ff9f0a;   --mixB-2: #ff375f;
+  --cons: #30d158;   --cons-2: #00c7be;
+  --yes: #34c759; --no: #ff3b30;
+  --radius: 22px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000; --bg-elev: #1c1c1e; --glass: rgba(28,28,30,.72);
+    --text: #f5f5f7; --text-2: #a1a1a6; --text-3: #8e8e93;
+    --line: rgba(255,255,255,.1); --fill: rgba(118,118,128,.24); --fill-2: rgba(118,118,128,.16);
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 28px rgba(0,0,0,.4);
+    --shadow-lg: 0 2px 6px rgba(0,0,0,.4), 0 24px 60px rgba(0,0,0,.55);
+    --accent: #2997ff;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000; --bg-elev: #1c1c1e; --glass: rgba(28,28,30,.72);
+  --text: #f5f5f7; --text-2: #a1a1a6; --text-3: #8e8e93;
+  --line: rgba(255,255,255,.1); --fill: rgba(118,118,128,.24); --fill-2: rgba(118,118,128,.16);
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 28px rgba(0,0,0,.4);
+  --shadow-lg: 0 2px 6px rgba(0,0,0,.4), 0 24px 60px rgba(0,0,0,.55);
+  --accent: #2997ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI Variable Display", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; letter-spacing: -.01em; line-height: 1.47;
+  overflow-x: hidden;
+}
+.latin { font-family: "New York", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; letter-spacing: 0; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+/* ---------- Nav ---------- */
+nav.top {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--glass); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+nav.top .wrap { display: flex; align-items: center; height: 52px; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; text-decoration: none; color: var(--text); }
+.brand-logo { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, var(--vowel), var(--mixA)); display: grid; place-items: center; color: #fff; font: 700 12px Georgia, serif; }
+.navlinks { display: flex; gap: 24px; margin-left: auto; }
+.navlinks a { color: var(--text-2); text-decoration: none; font-size: 13px; transition: color .2s; }
+.navlinks a:hover { color: var(--text); }
+.icon-btn { width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--fill-2); display: grid; place-items: center; transition: background .2s, transform .2s; }
+.icon-btn:hover { background: var(--fill); }
+.icon-btn:active { transform: scale(.94); }
+.icon-btn svg { width: 16px; height: 16px; }
+
+/* ---------- Hero ---------- */
+.hero { text-align: center; padding: 88px 0 40px; position: relative; }
+.hero::before {
+  content: ""; position: absolute; inset: -40px 0 auto; height: 520px; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(40% 50% at 30% 30%, color-mix(in srgb, var(--vowel) 22%, transparent), transparent 70%),
+    radial-gradient(35% 45% at 70% 25%, color-mix(in srgb, var(--mixA) 20%, transparent), transparent 70%),
+    radial-gradient(30% 40% at 55% 60%, color-mix(in srgb, var(--mixB) 14%, transparent), transparent 70%);
+  filter: blur(20px); opacity: .9;
+}
+.eyebrow { font-size: 17px; font-weight: 600; background: linear-gradient(90deg, var(--vowel), var(--mixA), var(--mixB-2)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px; }
+h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -.03em; font-weight: 700; margin: 0 0 18px; }
+.lede { font-size: clamp(18px, 2.2vw, 22px); color: var(--text-2); max-width: 640px; margin: 0 auto 40px; line-height: 1.38; }
+
+/* ---------- Search ---------- */
+.search { position: relative; max-width: 640px; margin: 0 auto; }
+.search-box {
+  display: flex; align-items: center; gap: 12px; padding: 0 10px 0 22px; height: 64px;
+  background: var(--bg-elev); border-radius: 32px; box-shadow: var(--shadow-lg); border: 1px solid var(--line);
+  transition: box-shadow .25s, transform .25s;
+}
+.search-box:focus-within { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent), var(--shadow-lg); }
+.search-box svg { width: 22px; height: 22px; color: var(--text-3); flex: none; }
+.search-box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 22px; height: 100%; }
+.search-box input::placeholder { color: var(--text-3); }
+.btn-primary {
+  border: 0; border-radius: 980px; background: var(--accent); color: #fff; font-weight: 500; font-size: 15px;
+  padding: 0 22px; height: 44px; transition: filter .2s, transform .15s; white-space: nowrap;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-primary:active { transform: scale(.97); }
+.btn-ghost { border: 0; border-radius: 980px; background: var(--fill-2); padding: 0 16px; height: 36px; font-size: 14px; transition: background .2s; white-space: nowrap; }
+.btn-ghost:hover { background: var(--fill); }
+.hint { margin-top: 14px; font-size: 13px; color: var(--text-3); }
+.hint .chip { display: inline-block; margin: 4px 2px; padding: 4px 12px; border-radius: 980px; background: var(--fill-2); color: var(--text-2); border: 0; font-size: 13px; transition: background .2s; }
+.hint .chip:hover { background: var(--fill); color: var(--text); }
+.suggest {
+  position: absolute; left: 0; right: 0; top: 72px; z-index: 30; background: var(--glass); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow-lg); padding: 6px; text-align: left; display: none; max-height: 360px; overflow: auto;
+}
+.suggest.open { display: block; animation: pop .18s ease-out; }
+.suggest button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; background: transparent; padding: 10px 14px; border-radius: 12px; text-align: left; }
+.suggest button.active, .suggest button:hover { background: var(--fill); }
+.suggest .s-word { font-size: 18px; }
+.suggest .s-form { color: var(--text-2); font-size: 14px; }
+.suggest .s-tr { margin-left: auto; color: var(--text-3); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 45%; }
+@keyframes pop { from { opacity: 0; transform: translateY(-6px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* ---------- Result ---------- */
+#result { max-width: 880px; margin: 48px auto 0; min-height: 10px; }
+.card { background: var(--bg-elev); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); }
+.result-card { padding: 40px; position: relative; overflow: hidden; animation: rise .5s cubic-bezier(.2,.8,.2,1); }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.result-card::after {
+  content: ""; position: absolute; right: -120px; top: -120px; width: 360px; height: 360px; border-radius: 50%;
+  background: radial-gradient(circle, var(--c1), transparent 70%); opacity: .16; pointer-events: none;
+}
+.r-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 28px; justify-content: space-between; }
+.r-word { font-size: clamp(44px, 7vw, 68px); line-height: 1; font-weight: 600; }
+.r-form { font-size: 20px; color: var(--text-2); margin-top: 10px; }
+.r-form i { font-style: italic; }
+.r-tr { font-size: 17px; margin-top: 6px; color: var(--text); }
+.r-src { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 10px; border-radius: 980px; background: var(--fill-2); color: var(--text-2); }
+.type-badge {
+  display: inline-flex; flex-direction: column; align-items: flex-start; padding: 16px 24px; border-radius: 20px; color: #fff;
+  background: linear-gradient(135deg, var(--c1), var(--c2)); box-shadow: 0 10px 30px color-mix(in srgb, var(--c1) 40%, transparent);
+  animation: badge .6s .9s cubic-bezier(.2,1.4,.4,1) both;
+}
+.type-badge small { font-size: 12px; opacity: .85; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+.type-badge b { font-size: 28px; font-weight: 700; letter-spacing: -.02em; }
+@keyframes badge { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+.t-vowel { --c1: var(--vowel); --c2: var(--vowel-2); }
+.t-mixedA { --c1: var(--mixA); --c2: var(--mixA-2); }
+.t-mixedB { --c1: var(--mixB); --c2: var(--mixB-2); }
+.t-consonant { --c1: var(--cons); --c2: var(--cons-2); }
+
+.section-label { font-size: 13px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin: 36px 0 14px; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.fact { background: var(--fill-2); border-radius: 16px; padding: 14px 16px; min-width: 0; }
+.fact > span { display: block; font-size: 12px; color: var(--text-3); margin-bottom: 4px; }
+.fact b { font-size: 20px; font-weight: 500; overflow-wrap: anywhere; }
+.fact b .hl { color: var(--c1); font-weight: 700; border-bottom: 2px solid var(--c1); }
+.fact b .syl { color: var(--text-3); font-weight: 400; }
+
+.steps { position: relative; }
+.step { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 4px 0 22px; position: relative; opacity: 0; animation: rise .45s cubic-bezier(.2,.8,.2,1) forwards; }
+.step:not(:last-child)::before { content: ""; position: absolute; left: 19px; top: 44px; bottom: 2px; width: 2px; background: var(--line); }
+.dot { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; }
+.dot.yes { background: var(--yes); }
+.dot.no { background: var(--fill); color: var(--text-2); }
+.dot svg { width: 18px; height: 18px; }
+.step h4 { margin: 8px 0 4px; font-size: 17px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.ans { font-size: 13px; padding: 2px 10px; border-radius: 980px; font-weight: 600; }
+.ans.yes { background: color-mix(in srgb, var(--yes) 15%, transparent); color: var(--yes); }
+.ans.no { background: var(--fill-2); color: var(--text-2); }
+.step p { margin: 0; color: var(--text-2); font-size: 15px; }
+.step p.why { color: var(--text); margin-top: 4px; }
+.step.final h4 { font-size: 19px; }
+
+.forms { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.notes { margin-top: 22px; display: grid; gap: 10px; }
+.note { display: flex; gap: 12px; padding: 14px 16px; border-radius: 16px; background: color-mix(in srgb, var(--mixB) 12%, transparent); font-size: 15px; }
+.note::before { content: "!"; flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--mixB); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+.picker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.picker button { border: 1px solid var(--line); background: var(--bg-elev); border-radius: 980px; padding: 8px 16px; }
+.picker button.on { background: var(--text); color: var(--bg); }
+
+.manual { padding: 36px 40px; animation: rise .45s cubic-bezier(.2,.8,.2,1); }
+.manual h3 { margin: 0 0 6px; font-size: 24px; letter-spacing: -.02em; }
+.manual p { margin: 0 0 22px; color: var(--text-2); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 160px; min-width: 0; }
+.field label { font-size: 12px; color: var(--text-3); font-weight: 600; }
+.field input { height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--fill-2); padding: 0 14px; outline: 0; font-size: 17px; transition: box-shadow .2s, background .2s; width: 100%; }
+.field input:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent); background: var(--bg-elev); }
+.seg { display: inline-flex; background: var(--fill-2); border-radius: 11px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; border-radius: 9px; padding: 0 14px; height: 38px; font-size: 14px; color: var(--text-2); transition: background .2s, color .2s; white-space: nowrap; }
+.seg button.on { background: var(--bg-elev); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 500; }
+
+/* ---------- Sections ---------- */
+section.block { padding: 110px 0 0; }
+.block-head { text-align: center; margin-bottom: 44px; }
+.block-head h2 { font-size: clamp(32px, 5vw, 48px); letter-spacing: -.03em; line-height: 1.08; margin: 0 0 12px; }
+.block-head p { color: var(--text-2); font-size: 19px; margin: 0 auto; max-width: 620px; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.flow .card { padding: 28px; position: relative; }
+.flow .num { width: 34px; height: 34px; border-radius: 50%; background: var(--text); color: var(--bg); display: grid; place-items: center; font-weight: 700; margin-bottom: 16px; }
+.flow h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.02em; }
+.flow p { margin: 0 0 16px; color: var(--text-2); font-size: 15px; }
+.flow .outs { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.flow .out { display: flex; align-items: center; gap: 8px; }
+.flow .pill { padding: 3px 10px; border-radius: 980px; color: #fff; font-weight: 600; font-size: 13px; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+.flow .muted { color: var(--text-3); }
+
+.types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+.type-card { padding: 24px; overflow: hidden; position: relative; }
+.type-card .bar { height: 6px; border-radius: 6px; background: linear-gradient(90deg, var(--c1), var(--c2)); margin-bottom: 18px; width: 48px; }
+.type-card h3 { margin: 0 0 8px; font-size: 20px; }
+.type-card p { color: var(--text-2); font-size: 14px; margin: 0 0 12px; }
+.type-card .ex { font-size: 15px; }
+.type-card .ends { margin-top: 14px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 13px; color: var(--text-2); }
+.type-card .ends b { color: var(--text); font-weight: 600; }
+.type-card .count { position: absolute; right: 20px; top: 18px; font-size: 13px; color: var(--text-3); }
+
+/* ---------- Dictionary ---------- */
+.dict-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+.dict-tools .field { flex: 1 1 220px; }
+.dict-tools .seg { flex-wrap: wrap; }
+.dict-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.table-wrap { overflow: hidden; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+thead th { text-align: left; font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; padding: 14px 18px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--bg-elev); }
+tbody tr { cursor: pointer; transition: background .15s; }
+tbody tr:hover { background: var(--fill-2); }
+tbody td { padding: 12px 18px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tbody tr:last-child td { border-bottom: 0; }
+td.w { font-size: 17px; }
+td.tr { color: var(--text-2); }
+.mini { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+.mini::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+.scroll { max-height: 620px; overflow: auto; }
+.del { border: 0; background: transparent; color: var(--text-3); font-size: 18px; line-height: 1; padding: 4px 8px; border-radius: 8px; }
+.del:hover { color: var(--no); background: var(--fill-2); }
+.empty { padding: 40px; text-align: center; color: var(--text-3); }
+.dict-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 12px 4px 0; color: var(--text-3); font-size: 13px; }
+
+.add-panel { padding: 24px 28px; margin-bottom: 16px; display: none; }
+.add-panel.open { display: block; animation: rise .35s ease-out; }
+.add-panel h3 { margin: 0 0 4px; font-size: 19px; }
+.add-panel p { margin: 0 0 16px; color: var(--text-2); font-size: 14px; }
+.add-panel textarea { width: 100%; min-height: 120px; border-radius: 14px; border: 1px solid var(--line); background: var(--fill-2); padding: 14px; font: 15px/1.5 ui-monospace, "Cascadia Code", Consolas, monospace; color: var(--text); outline: 0; resize: vertical; }
+.add-panel .row { margin-top: 12px; }
+
+footer { padding: 90px 0 50px; color: var(--text-3); font-size: 12px; text-align: center; }
+footer p { margin: 4px 0; }
+
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 12px 20px; border-radius: 980px; font-size: 14px; opacity: 0; transition: .3s; pointer-events: none; z-index: 100; box-shadow: var(--shadow-lg); max-width: calc(100% - 32px); }
+.toast.show { opacity: 1; transform: translateX(-50%); }
+
+@media (max-width: 860px) {
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .flow, .types { grid-template-columns: 1fr 1fr; }
+  .navlinks { display: none; }
+  nav.top .wrap { gap: 12px; }
+  #themeBtn { margin-left: auto; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding-top: 56px; }
+  .search-box { height: 56px; padding-left: 16px; }
+  .search-box input { font-size: 18px; }
+  .btn-primary.go { padding: 0 14px; }
+  .result-card, .manual { padding: 26px 20px; }
+  .flow, .types { grid-template-columns: 1fr; }
+  td.tr, th.tr, td.src, th.src { display: none; }
+  thead th, tbody td { padding: 10px 12px; }
+  .suggest .s-tr { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .step { opacity: 1; } }
+</style>
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-logo">III</span>Латынь · III склонение</a>
+    <div class="navlinks">
+      <a href="#top">Поиск</a>
+      <a href="#how">Как это работает</a>
+      <a href="#dict">Словарь</a>
+    </div>
+    <button class="icon-btn" id="themeBtn" title="Сменить тему" aria-label="Сменить тему">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Латинский язык · медицинский вуз</div>
+      <h1>Разновидности существительных<br>III склонения</h1>
+      <p class="lede">Введите существительное в Nom.&nbsp;Sing. Программа найдёт его в словарях Бондаренко и Чернявского и пошагово определит разновидность: гласную, смешанную А, смешанную Б или согласную.</p>
+      <div class="search">
+        <form class="search-box" id="searchForm" autocomplete="off">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="text" placeholder="например, foramen" spellcheck="false" autocapitalize="off" aria-label="Латинское существительное">
+          <button class="btn-primary go" type="submit">Определить</button>
+        </form>
+        <div class="suggest" id="suggest" role="listbox"></div>
+        <div class="hint">Попробуйте:
+          <button class="chip latin" data-q="animal">animal</button>
+          <button class="chip latin" data-q="pubes">pubes</button>
+          <button class="chip latin" data-q="dens">dens</button>
+          <button class="chip latin" data-q="index">index</button>
+          <button class="chip latin" data-q="larynx">larynx</button>
+        </div>
+        <div class="hint">Можно ввести и словарную форму целиком: <span class="latin">cor, cordis n</span></div>
+      </div>
+    </header>
+    <div id="result" aria-live="polite"></div>
+  </div>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Алгоритм определения</h2>
+        <p>Вопросы задаются строго по порядку, как в алгоритме преподавателя.</p>
+      </div>
+      <div class="flow">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>Гласная разновидность?</h3>
+          <p>Существительное среднего рода с окончанием Nom.&nbsp;Sing. <b class="latin">-e, -al, -ar</b>.</p>
+          <div class="outs">
+            <div class="out t-vowel">Да → <span class="pill">Гласная</span></div>
+            <div class="out muted">Нет → вопрос 2</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>Равносложное?</h3>
+          <p>В Nom. и Gen. Sing. одинаковое число слогов, окончание <b class="latin">-es / -is</b>.</p>
+          <div class="outs">
+            <div class="out t-mixedB">Да → <span class="pill">Смешанная Б</span></div>
+            <div class="out muted">Нет → вопрос 3</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>Основа на 1 согласный?</h3>
+          <p>Практическая основа — это Gen. Sing. без окончания <b class="latin">-is</b>.</p>
+          <div class="outs">
+            <div class="out t-consonant">Да → <span class="pill">Согласная</span></div>
+            <div class="out t-mixedA">Нет → <span class="pill">Смешанная А</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="types" id="typeCards"></div>
+    </div>
+  </section>
+
+  <section class="block" id="dict">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Словарь</h2>
+        <p>Существительные III склонения из пособий Бондаренко (2021) и Чернявского. Можно добавить свои слова или загрузить список из файла.</p>
+      </div>
+      <div class="dict-tools">
+        <div class="field">
+          <input id="dq" type="text" placeholder="Поиск по латыни или переводу" spellcheck="false" aria-label="Поиск по словарю">
+        </div>
+        <div class="seg" id="dfilter"></div>
+        <div class="dict-actions">
+          <button class="btn-ghost" id="addBtn">＋ Добавить слова</button>
+          <button class="btn-ghost" id="impBtn">Загрузить CSV/TXT</button>
+          <button class="btn-ghost" id="expBtn">Экспорт CSV</button>
+          <input type="file" id="file" accept=".csv,.txt,.tsv,text/plain,text/csv" hidden>
+        </div>
+      </div>
+      <div class="card add-panel" id="addPanel">
+        <h3>Добавить свои слова</h3>
+        <p>По одному слову на строку в словарной форме: <span class="latin">Nom. Sing., окончание Gen. Sing., род</span>, после тире или точки с запятой — перевод. Слова сохраняются в этом браузере.</p>
+        <textarea id="addText" spellcheck="false" placeholder="index, icis m — указательный палец&#10;rete, is n; сеть&#10;pars, partis f — часть"></textarea>
+        <div class="row">
+          <button class="btn-primary" id="addSave">Добавить</button>
+          <button class="btn-ghost" id="addCancel">Отмена</button>
+        </div>
+      </div>
+      <div class="card table-wrap">
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Слово</th><th>Gen. Sing.</th><th>Род</th><th>Разновидность</th><th class="tr">Перевод</th><th class="src">Источник</th></tr></thead>
+            <tbody id="dbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="dict-foot"><span id="dcount"></span><span>Нажмите на строку, чтобы увидеть разбор</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Словари: Бондаренко — учебное пособие (2021); Чернявский М. Н. — «Латинский язык и основы медицинской терминологии».</p>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/*LOGIC*/
+</script>
+<script>
+/*DATA*/
+</script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const lc = (s) => s[0].toLowerCase() + s.slice(1);
+  const SRC = { "Б": "Бондаренко", "Ч": "Чернявский", "U": "Мои слова" };
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+  };
+
+  // ---------- Theme ----------
+  const themeBtn = $("#themeBtn");
+  const savedTheme = store.get("lat3.theme", null);
+  if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  themeBtn.addEventListener("click", () => {
+    const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next; store.set("lat3.theme", next);
+  });
+
+  // ---------- Data ----------
+  let userWords = store.get("lat3.user", []);
+  let entries = [];
+  function rebuild() {
+    entries = DICT.map((e) => mk(e[0], e[1], e[2], e[3], e[4].split("")))
+      .concat(userWords.map((e) => mk(e[0], e[1], e[2], e[3], ["U"])));
+    entries.sort((a, b) => a.nom.localeCompare(b.nom) || a.gen.localeCompare(b.gen));
+  }
+  function mk(nom, genEnd, gender, tr, src) {
+    const r = classify(nom, genEnd, gender);
+    return { nom: norm(nom), genEnd, gender, tr: tr || "", src, r, gen: r.gen, type: r.type };
+  }
+  rebuild();
+
+  function dictForm(e) { return `${e.nom}, ${e.genEnd}${e.gender ? " " + e.gender.replace("/", ", ") : ""}`; }
+
+  // ---------- Search & suggestions ----------
+  const q = $("#q"), sug = $("#suggest");
+  let sugItems = [], sugIdx = -1;
+  function findMatches(text, limit = 8) {
+    const t = text.trim().toLowerCase();
+    if (!t) return [];
+    const n = norm(t);
+    const res = [];
+    if (n) for (const e of entries) if (e.nom.startsWith(n)) res.push(e);
+    if (res.length < limit && /[а-яё]/i.test(t)) for (const e of entries) if (e.tr.toLowerCase().includes(t) && !res.includes(e)) res.push(e);
+    return res.slice(0, limit);
+  }
+  function renderSuggest() {
+    sugItems = findMatches(q.value);
+    sugIdx = -1;
+    if (!sugItems.length || (sugItems.length === 1 && sugItems[0].nom === norm(q.value))) { sug.classList.remove("open"); return; }
+    sug.innerHTML = sugItems.map((e, i) =>
+      `<button type="button" data-i="${i}" role="option"><span class="s-word latin">${esc(e.nom)}</span><span class="s-form latin">${esc(e.genEnd)} ${esc(e.gender)}</span><span class="s-tr">${esc(e.tr)}</span></button>`).join("");
+    sug.classList.add("open");
+  }
+  q.addEventListener("input", renderSuggest);
+  q.addEventListener("keydown", (ev) => {
+    if (!sug.classList.contains("open")) return;
+    const btns = sug.querySelectorAll("button");
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+      ev.preventDefault();
+      sugIdx = (sugIdx + (ev.key === "ArrowDown" ? 1 : -1) + btns.length) % btns.length;
+      btns.forEach((b, i) => b.classList.toggle("active", i === sugIdx));
+      btns[sugIdx].scrollIntoView({ block: "nearest" });
+    } else if (ev.key === "Enter" && sugIdx >= 0) {
+      ev.preventDefault(); pick(sugItems[sugIdx]);
+    } else if (ev.key === "Escape") sug.classList.remove("open");
+  });
+  sug.addEventListener("mousedown", (ev) => { const b = ev.target.closest("button"); if (b) { ev.preventDefault(); pick(sugItems[+b.dataset.i]); } });
+  document.addEventListener("click", (ev) => { if (!ev.target.closest(".search")) sug.classList.remove("open"); });
+  function pick(e) { q.value = e.nom; sug.classList.remove("open"); showEntry(e, entries.filter((x) => x.nom === e.nom)); }
+
+  $("#searchForm").addEventListener("submit", (ev) => { ev.preventDefault(); sug.classList.remove("open"); lookup(q.value); });
+  document.querySelectorAll(".chip[data-q]").forEach((c) => c.addEventListener("click", () => { q.value = c.dataset.q; lookup(c.dataset.q); }));
+
+  // «foramen, inis n — отверстие»
+  function parseDictLine(line) {
+    const m = line.trim().match(/^([A-Za-zĀ-ſ̀-ͯ]+)\s*[,;\t]\s*([A-Za-zĀ-ſ̀-ͯ]+)(?:\s*[,;\t]?\s*\(?\s*([mfnMFN](?:\s*[,/]\s*[mfnMFN])?)\s*\.?\)?)?(?:\s*(?:[—–\-;:\t|]|\s)\s*(.+))?$/);
+    if (!m) return null;
+    return { nom: norm(m[1]), genEnd: norm(m[2]), gender: (m[3] || "").toLowerCase().replace(/[^mfn]/g, "").split("").join("/"), tr: (m[4] || "").trim() };
+  }
+
+  function lookup(text) {
+    const t = text.trim();
+    if (!t) return;
+    if (/[,;\t]/.test(t)) {
+      const p = parseDictLine(t);
+      if (p) {
+        const known = entries.find((e) => e.nom === p.nom && norm(e.gen) === norm(fullGenitive(p.nom, p.genEnd)));
+        if (known) return showEntry(known, [known]);
+        return showEntry(mk(p.nom, p.genEnd, p.gender, p.tr, ["custom"]), null, true);
+      }
+    }
+    const n = norm(t);
+    let found = entries.filter((e) => e.nom === n);
+    if (!found.length && /[а-яё]/i.test(t)) found = findMatches(t, 1);
+    if (found.length) return showEntry(found[0], entries.filter((x) => x.nom === found[0].nom));
+    showManual(n);
+  }
+
+  // ---------- Result rendering ----------
+  const result = $("#result");
+  const ICON_YES = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  const ICON_NO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg>';
+
+  function stemHtml(r) {
+    const s = r.stem, k = r.final.letters.length;
+    if (!k) return esc(s) + "-";
+    return esc(s.slice(0, s.length - k)) + `<span class="hl">${esc(s.slice(-k))}</span>-`;
+  }
+  function caseForms(e) {
+    const r = e.r, s = r.stem, t = r.type, neut = (e.gender || "").includes("n") && !(e.gender || "").includes("/");
+    const forms = [];
+    forms.push(["Nom. Pl.", neut ? s + (t === "vowel" ? "ia" : "a") : s + "es"]);
+    forms.push(["Gen. Pl.", e.nom === "vas" ? "vasorum" : s + (t === "consonant" ? "um" : "ium")]);
+    forms.push(["Abl. Sing.", s + (t === "vowel" || r.notes.some((n) => n.includes("Abl. Sing. -i") || n.includes("Abl. Sing. на -i")) ? "i" : "e")]);
+    if (!neut) forms.push(["Acc. Sing.", r.notes.some((n) => n.includes("Acc. Sing. -im")) ? s + "im" : s + "em"]);
+    return forms;
+  }
+
+  function showEntry(e, variants, custom) {
+    const r = e.r;
+    if (r.error) {
+      result.innerHTML = `<div class="card manual"><h3>${esc(e.nom)} — не III склонение</h3><p>${esc(r.error)} Проверьте окончание Gen. Sing.</p></div>`;
+      return scrollResult();
+    }
+    const T = TYPES[r.type];
+    const steps = r.steps.map((s, i) => `
+      <div class="step" style="animation-delay:${0.15 + i * 0.22}s">
+        <div class="dot ${s.yes ? "yes" : "no"}">${s.yes ? ICON_YES : ICON_NO}</div>
+        <div>
+          <h4>${i + 1}. ${esc(s.q)} <span class="ans ${s.yes ? "yes" : "no"}">${s.yes ? "Да" : "Нет"}</span></h4>
+          <p>${esc(s.rule)}</p>
+          <p class="why">${esc(s.why)}</p>
+        </div>
+      </div>`).join("");
+    const finalStep = `
+      <div class="step final" style="animation-delay:${0.15 + r.steps.length * 0.22}s">
+        <div class="dot yes" style="background:linear-gradient(135deg,var(--c1),var(--c2))">${ICON_YES}</div>
+        <div><h4>Итог: ${esc(lc(T.name))} разновидность${r.exception && r.algoType !== r.type ? " (исключение)" : ""}</h4>
+        ${r.exception && r.algoType !== r.type ? `<p>По трём вопросам вышла бы «${esc(lc(TYPES[r.algoType].name))}», но слово — исключение (см. ниже).</p>` : ""}</div>
+      </div>`;
+    const varPick = variants && variants.length > 1
+      ? `<div class="picker">${variants.map((v, i) => `<button class="latin ${v === e ? "on" : ""}" data-v="${i}">${esc(dictForm(v))} — ${esc(v.tr)}</button>`).join("")}</div>` : "";
+    const src = (e.src || []).filter((s) => SRC[s]).map((s) => `<span class="tag">${SRC[s]}</span>`).join("") || (custom ? `<span class="tag">Введено вручную</span>` : "");
+    result.innerHTML = `
+      <article class="card result-card t-${r.type}">
+        <div class="r-head">
+          <div>
+            <div class="r-word latin">${esc(e.nom)}</div>
+            <div class="r-form latin">${esc(e.nom)}, <i>${esc(e.genEnd)}</i> ${esc((e.gender || "").replace("/", ", "))}</div>
+            ${e.tr ? `<div class="r-tr">${esc(e.tr)}</div>` : ""}
+            <div class="r-src">${src}</div>
+          </div>
+          <div class="type-badge"><small>Разновидность</small><b>${esc(T.name)}</b></div>
+        </div>
+        ${varPick}
+        <div class="section-label">Исходные данные</div>
+        <div class="facts">
+          <div class="fact"><span>Nom. Sing.</span><b class="latin">${esc(r.splitNom.join("·"))}</b></div>
+          <div class="fact"><span>Gen. Sing.</span><b class="latin">${esc(r.splitGen.join("·"))}</b></div>
+          <div class="fact"><span>Практическая основа</span><b class="latin">${stemHtml(r)}</b></div>
+          <div class="fact"><span>Слогов Nom. / Gen.</span><b>${r.sylNom} / ${r.sylGen}</b></div>
+        </div>
+        <div class="section-label">Как определили</div>
+        <div class="steps">${steps}${finalStep}</div>
+        ${r.notes.length ? `<div class="notes">${r.notes.map((n) => `<div class="note">${esc(n)}</div>`).join("")}</div>` : ""}
+        <div class="section-label">Что из этого следует</div>
+        <div class="forms">
+          ${caseForms(e).map(([k, v]) => `<div class="fact"><span>${k}</span><b class="latin">${esc(v)}</b></div>`).join("")}
+        </div>
+        ${custom ? `<div class="row" style="margin-top:24px"><button class="btn-primary" id="saveCustom">Сохранить в мой словарь</button></div>` : ""}
+      </article>`;
+    if (varPick) result.querySelectorAll(".picker button").forEach((b) => b.addEventListener("click", () => showEntry(variants[+b.dataset.v], variants)));
+    if (custom) $("#saveCustom").addEventListener("click", () => { addUser([[e.nom, e.genEnd, e.gender, e.tr]]); toast("Слово сохранено в ваш словарь"); });
+    scrollResult();
+  }
+
+  function showManual(nom) {
+    let gender = "";
+    result.innerHTML = `
+      <div class="card manual">
+        <h3>Слова <span class="latin">«${esc(nom || "")}»</span> нет в словаре</h3>
+        <p>Не беда: введите окончание Gen. Sing. и род из учебника, и программа определит разновидность.</p>
+        <div class="row">
+          <div class="field"><label>Nom. Sing.</label><input id="mNom" class="latin" value="${esc(nom)}"></div>
+          <div class="field"><label>Gen. Sing. (окончание или целиком)</label><input id="mGen" class="latin" placeholder="например, inis"></div>
+          <div class="field" style="flex:0 0 auto"><label>Род</label>
+            <div class="seg" id="mG"><button type="button" data-g="m">m</button><button type="button" data-g="f">f</button><button type="button" data-g="n">n</button></div>
+          </div>
+          <div class="field" style="flex:1 1 200px"><label>Перевод (необязательно)</label><input id="mTr"></div>
+          <button class="btn-primary" id="mGo">Определить</button>
+        </div>
+      </div>`;
+    $("#mG").addEventListener("click", (ev) => {
+      const b = ev.target.closest("button"); if (!b) return;
+      gender = b.dataset.g; $("#mG").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+    });
+    const go = () => {
+      const n = norm($("#mNom").value), g = norm($("#mGen").value);
+      if (!n || !g) return toast("Заполните Nom. Sing. и Gen. Sing.");
+      if (!gender) return toast("Выберите род: m, f или n");
+      showEntry(mk(n, g, gender, $("#mTr").value.trim(), []), null, true);
+    };
+    $("#mGo").addEventListener("click", go);
+    $("#mGen").addEventListener("keydown", (ev) => { if (ev.key === "Enter") go(); });
+    scrollResult(); setTimeout(() => $(nom ? "#mGen" : "#mNom").focus(), 300);
+  }
+  function scrollResult() {
+    const y = result.getBoundingClientRect().top + scrollY - 80;
+    if (Math.abs(scrollY - y) > 40) scrollTo({ top: y, behavior: "smooth" });
+  }
+
+  // ---------- Type cards ----------
+  const TYPE_INFO = {
+    vowel: { d: "Средний род, Nom. Sing. на -e, -al, -ar.", ex: "rete, is n · animal, alis n · exemplar, aris n" },
+    mixedB: { d: "Равносложные на -es, -is: слогов в Nom. и Gen. поровну.", ex: "pubes, is f · auris, is f · canalis, is m" },
+    mixedA: { d: "Неравносложные, основа на 2 и более согласных.", ex: "pars, partis f · dens, dentis m · os, ossis n" },
+    consonant: { d: "Неравносложные, основа на 1 согласный.", ex: "index, icis m · corpus, oris n · regio, onis f" },
+  };
+  function renderTypeCards() {
+    const counts = {}; entries.forEach((e) => (counts[e.type] = (counts[e.type] || 0) + 1));
+    $("#typeCards").innerHTML = ["vowel", "mixedB", "mixedA", "consonant"].map((k) => {
+      const T = TYPES[k], I = TYPE_INFO[k];
+      return `<div class="card type-card t-${k}">
+        <span class="count">${counts[k] || 0} ${plural(counts[k] || 0, "слово", "слова", "слов")}</span>
+        <div class="bar"></div><h3>${T.name}</h3><p>${I.d}</p>
+        <div class="ex latin">${I.ex}</div>
+        <div class="ends"><span>Abl. Sing.</span><b class="latin">${T.ablSg}</b><span>Gen. Pl.</span><b class="latin">${T.genPl}</b><span>Nom. Pl. (n)</span><b class="latin">${T.nomPlN}</b></div>
+      </div>`;
+    }).join("");
+  }
+
+  // ---------- Dictionary table ----------
+  let filter = "all";
+  const dq = $("#dq"), dbody = $("#dbody");
+  const FILTERS = [["all", "Все"], ["vowel", "Гласная"], ["mixedA", "Смеш. А"], ["mixedB", "Смеш. Б"], ["consonant", "Согласная"]];
+  function renderFilters() {
+    $("#dfilter").innerHTML = FILTERS.map(([k, l]) => `<button type="button" data-f="${k}" class="${k === filter ? "on" : ""}">${l}</button>`).join("");
+  }
+  $("#dfilter").addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (!b) return; filter = b.dataset.f; renderFilters(); renderTable(); });
+  dq.addEventListener("input", renderTable);
+  function visibleRows() {
+    const t = dq.value.trim().toLowerCase(), n = norm(t);
+    return entries.filter((e) => (filter === "all" || e.type === filter) &&
+      (!t || (n && e.nom.includes(n)) || e.tr.toLowerCase().includes(t)));
+  }
+  function renderTable() {
+    const rows = visibleRows();
+    dbody.innerHTML = rows.length ? rows.map((e) => {
+      const i = entries.indexOf(e);
+      return `<tr data-i="${i}" class="t-${e.type}">
+        <td class="w latin">${esc(e.nom)}</td><td class="latin">${esc(e.genEnd)}</td><td class="latin">${esc(e.gender)}</td>
+        <td><span class="mini">${TYPES[e.type] ? TYPES[e.type].name : "—"}</span></td>
+        <td class="tr">${esc(e.tr)}</td>
+        <td class="src">${e.src.map((s) => SRC[s] ? `<span class="tag">${s === "U" ? "мои" : SRC[s]}</span>` : "").join(" ")}${e.src.includes("U") ? ` <button class="del" data-del="${i}" title="Удалить">×</button>` : ""}</td>
+      </tr>`;
+    }).join("") : `<tr><td colspan="6" class="empty">Ничего не найдено</td></tr>`;
+    $("#dcount").textContent = `Показано ${rows.length} из ${entries.length}`;
+  }
+  dbody.addEventListener("click", (ev) => {
+    const del = ev.target.closest("[data-del]");
+    if (del) {
+      ev.stopPropagation();
+      const e = entries[+del.dataset.del];
+      userWords = userWords.filter((u) => !(norm(u[0]) === e.nom && norm(u[1]) === norm(e.genEnd)));
+      store.set("lat3.user", userWords); refresh(); toast("Слово удалено"); return;
+    }
+    const tr = ev.target.closest("tr[data-i]"); if (!tr) return;
+    const e = entries[+tr.dataset.i]; q.value = e.nom;
+    showEntry(e, entries.filter((x) => x.nom === e.nom));
+  });
+
+  // ---------- Add / import / export ----------
+  const addPanel = $("#addPanel");
+  $("#addBtn").addEventListener("click", () => { addPanel.classList.toggle("open"); if (addPanel.classList.contains("open")) $("#addText").focus(); });
+  $("#addCancel").addEventListener("click", () => addPanel.classList.remove("open"));
+  $("#addSave").addEventListener("click", () => {
+    const n = importText($("#addText").value);
+    if (n) { $("#addText").value = ""; addPanel.classList.remove("open"); }
+  });
+  $("#impBtn").addEventListener("click", () => $("#file").click());
+  $("#file").addEventListener("change", async (ev) => {
+    const f = ev.target.files[0]; if (!f) return;
+    let txt = await f.text();
+    if (txt.includes("�")) { const buf = await f.arrayBuffer(); txt = new TextDecoder("windows-1251").decode(buf); }
+    importText(txt); ev.target.value = "";
+  });
+  function importText(txt) {
+    const ok = [], bad = [];
+    txt.split(/\r?\n/).forEach((line) => {
+      if (!line.trim() || /^\s*(nom|слово|#)/i.test(line)) return;
+      const p = parseDictLine(line.replace(/"/g, ""));
+      if (p && classify(p.nom, p.genEnd, p.gender).gen.endsWith("is")) ok.push([p.nom, p.genEnd, p.gender, p.tr]); else bad.push(line.trim());
+    });
+    if (ok.length) addUser(ok);
+    toast(`Добавлено слов: ${ok.length}` + (bad.length ? ` · не распознано строк: ${bad.length}` : ""));
+    return ok.length;
+  }
+  function addUser(list) {
+    for (const w of list) {
+      const i = userWords.findIndex((u) => norm(u[0]) === norm(w[0]) && norm(u[1]) === norm(w[1]));
+      if (i >= 0) userWords[i] = w; else userWords.push(w);
+    }
+    if (!store.set("lat3.user", userWords)) toast("Браузер не разрешил сохранить слова — они пропадут после перезагрузки");
+    refresh();
+  }
+  $("#expBtn").addEventListener("click", () => {
+    const rows = visibleRows();
+    const head = ["Nom. Sing.", "Словарная форма", "Gen. Sing.", "Род", "Практическая основа", "Разновидность", "Перевод", "Источник"];
+    const csv = [head].concat(rows.map((e) => [e.nom, dictForm(e), e.gen, e.gender, e.r.stem + "-", TYPES[e.type] ? TYPES[e.type].name : "", e.tr, e.src.map((s) => SRC[s] || "").join(", ")]))
+      .map((r) => r.map((c) => `"${String(c ?? "").replace(/"/g, '""')}"`).join(";")).join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" }));
+    a.download = "slovar_III_sklonenie.csv"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+
+  // ---------- Misc ----------
+  let toastT;
+  function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2600); }
+  function refresh() { rebuild(); renderTypeCards(); renderTable(); }
+  renderFilters(); refresh();
+  addEventListener("keydown", (ev) => { if (ev.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") { ev.preventDefault(); q.focus(); } });
+})();
+</script>
+</body>
+</html>
